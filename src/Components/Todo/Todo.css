@@ -1,3 +1,5 @@
-.todo_list {
-  text-align: center;
+.deleteBtn,
+.editBtn {
+  cursor: pointer;
+  margin-left: 0.3rem;
 }
