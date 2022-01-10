@@ -3,3 +3,8 @@
   cursor: pointer;
   margin-left: 0.3rem;
 }
+
+.updateModal {
+  display: flex;
+  justify-content: space-between;
+}

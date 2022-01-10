@@ -9,7 +9,6 @@ import firebase from "firebase/compat/app";
 function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
-
   // When the app loads, we need to listen to the database and fetch new todos as they get added or removed
 
   useEffect(() => {
@@ -32,6 +31,8 @@ function App() {
       task: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    console.log("ye add wala log h : ", input);
+
     setInput("");
   };
 
@@ -44,6 +45,7 @@ function App() {
         <Input onChange={(e) => setInput(e.target.value)} value={input} />
       </FormControl>
       <Button
+        className="addBtn"
         disabled={!input}
         type="submit"
         onClick={addTodo}

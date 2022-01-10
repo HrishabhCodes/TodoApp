@@ -37,6 +37,7 @@ function Todo(props) {
 
   const updateTodo = (event) => {
     event.preventDefault();
+    console.log("ye update wala log h : ", input);
     db.collection("todos").doc(props.todo.id).set(
       {
         task: input,
@@ -50,7 +51,7 @@ function Todo(props) {
     <div>
       <Modal open={open} onClose={(e) => setOpen(false)}>
         <Box sx={{ ...style, width: 400 }}>
-          <form>
+          <form className="updateModal">
             <FormControl>
               <InputLabel>Update the Task</InputLabel>
               <Input onChange={(e) => setInput(e.target.value)} value={input} />
